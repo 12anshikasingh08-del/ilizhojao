@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Sirr Ji 💛</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Patrick Hand', cursive;
+  background: linear-gradient(to bottom, #fff1e6, #fde2e4);
+  color: #3b2f2f;
+  overflow-x: hidden;
+}
+
+/* CENTER */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+}
+
+/* ENVELOPE */
+.envelope {
+  width: 220px;
+  height: 140px;
+  background: #c94f4f;
+  position: relative;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.envelope::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-left: 110px solid transparent;
+  border-right: 110px solid transparent;
+  border-top: 70px solid #e57373;
+}
+
+.envelope span {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.hidden {
+  display: none;
+}
+
+/* SECTION CARD */
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+  max-width: 800px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+/* BUTTON */
+.btn {
+  background: #c94f4f;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  margin: 20px 0;
+}
+
+/* MESSAGE */
+.message {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  line-height: 1.9;
+}
+
+/* IMAGE */
+.image-box img {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 22px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  margin: 30px 0;
+}
+
+/* POEM */
+.poem {
+  white-space: pre-line;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* HEARTS */
+.heart {
+  position: fixed;
+  bottom: -20px;
+  color: #f28b8b;
+  font-size: 18px;
+  animation: floatUp 7s linear infinite;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(-100vh); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ENVELOPE SCREEN -->
+<div class="center" id="envelopeScreen">
+  <div class="envelope" onclick="openEnvelope()">
+    <span>Tap to open 💌</span>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div id="content" class="hidden">
+
+  <div class="center">
+    <div class="card">
+      <h2>For Sirr ji 💛</h2>
+      <button class="btn" onclick="openMessage()">Tap here</button>
+    </div>
+  </div>
+
+  <div class="center hidden" id="messageSection">
+    <div class="card message">
+      To the very special man who puts up with everything  
+      and still manages to make me laugh,  
+      thank you for being you.  
+
+      You are my constant support —  
+      thanks for loving me in my lows to highs.  
+
+      <strong>I love you, Sirr ji 🤍</strong>
+
+      <br><br>
+      <em>Scroll down ↓</em>
+    </div>
+  </div>
+
+  <div class="center">
+    <div class="card image-box">
+      <img src="https://pin.it/45qL9qaEA" alt="Us">
+      <p><em>This is us btw 🤍</em></p>
+    </div>
+  </div>
+
+  <div class="center">
+    <div class="card poem">
+      <h3>My love in verse</h3>
+
+Anjaan tha ek din  
+Ab apna lgne laga hai,  
+Vo khaas dost tha kal,  
+Aaj or khaas ho gaya hai.  
+
+Waqt aise saath me uske behne laga hai,  
+Ghante ghadi me the jo,  
+Vo bas kuch minute me behne laga hai,  
+
+Saath rahu uske,  
+Uske paas rahu main,  
+Kuch nai, bass dil ko itna lagne laga hai,  
+
+Vo ajaan tha kal,  
+Ab dil ke sabke kareeb rehne laga hai.  
+
+Ek ajnabi thaa vo,  
+Ab ghar sa lagne laga hai,  
+Ghar dhoond ti thi mai,  
+Ab ghar mere saath hi rhne laga hai,  
+
+Anjaan tha vo ek din,  
+Ab mujhse bhi kareeb mere rhne laga hai,  
+Jitna jaana nai khudko Maine,  
+Mujhko mujhse bhi zyada smjhne laga hai  
+
+Anjaan tha vo kal,  
+Ab vo Anjaan kahan raha hai,  
+Meri baaton, mere khawabo me rhne laga hai,  
+Anjaan tha vo,  
+Ab ghar sa lagne laga hai.
+    </div>
+  </div>
+
+</div>
+
+<!-- MUSIC -->
+<button class="btn" style="position:fixed; bottom:20px; right:20px;" onclick="playMusic()">🎵 Play music</button>
+<audio id="song" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function openEnvelope() {
+  document.getElementById("envelopeScreen").style.display = "none";
+  document.getElementById("content").classList.remove("hidden");
+}
+
+function openMessage() {
+  document.getElementById("messageSection").classList.remove("hidden");
+}
+
+function playMusic() {
+  document.getElementById("song").play();
+}
+
+/* HEARTS */
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (14 + Math.random() * 14) + "px";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 8000);
+}
+setInterval(createHeart, 600);
+</script>
+
+</body>
+</html>
